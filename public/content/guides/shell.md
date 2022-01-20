@@ -13,7 +13,7 @@ This Guide requires an advanced set of tools and skills. Depending on your famil
 
 For this Guide, we are using a set of components:
 
-- <Link href="https://alpinelinux.org">Alpine Linux</Link>, which is our
+- <Link href="https://www.ulosino.com/browse/alpine">Alpine Linux</Link>, which is our
   operating system of choice
 - X11, which is our windowing backend[^1] of choice
 - <Link href="https://www.haskell.org/ghcup/#quick-install">ghcup</Link> and stack,
@@ -55,7 +55,7 @@ To continue we need to setup Alpine - if your using Ethernet, follow on - otherw
 4. Type `f` when prompted to select a package mirror.
 5. Select a hard disk. Check the capacity shown and judge if it is right.
 6. Type `sys` for a conventional install.
-7. Once installed, type `reboot`. If your using a virtual machine, power off the VM and remove the virtual installation disk (as demonstrated in the <Link href="/support/guides/virtual">Going Virtual</Link> guide).
+7. Once installed, type `reboot`. If your using a virtual machine, power off the VM and remove the virtual installation disk (as demonstrated in the <Link href="/guides/virtual">Going Virtual</Link> guide).
 
 Now we have installed Alpine. Hike on!
 
@@ -150,7 +150,7 @@ To run `xmonad`, you should now be able to use the following:
 exec xmonad
 ```
 
-If this didn't work, don't worry; the majority of your work is done. Refer to the <Link href="/support/guides/virtual">XMonad installation guide</Link> for more detailed installation information.
+If this didn't work, don't worry; the majority of your work is done. Refer to the XMonad installation guide for more detailed installation information.
 
 ---
 
