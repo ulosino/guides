@@ -1,7 +1,7 @@
 {
-  "short_name": "ULOSINO",
-  "name": "ULOSINO",
-  "description": "Open source OS database",
+  "short_name": "ULOSINO Guides",
+  "name": "ULOSINO Guides",
+  "description": "Learn Unix, Linux, and operating system computing concepts for free",
   "id": "/",
   "start_url": "/",
   "scope": "/",
