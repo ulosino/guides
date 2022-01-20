@@ -22,7 +22,7 @@ export default function Offline() {
   return (
     <>
       <Head>
-        <title>ULOSINO &mdash; Offline</title>
+        <title>ULOSINO Guides &mdash; Offline</title>
       </Head>
 
       <Flex

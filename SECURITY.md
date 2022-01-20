@@ -1,4 +1,4 @@
-# ULOSINO security
+# ULOSINO Guides security
 
 ULOSINO is commited to delivering a product of the 21st century, and that strategy involves a strong stance to security.
 

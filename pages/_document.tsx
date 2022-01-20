@@ -12,11 +12,12 @@ export default class Document extends NextDocument {
           {/* General metadata */}
           <meta
             name="description"
-            content="ULOSINO is open source operating system information in a modern setting. Embolden your knowledge and connect direct to culture, only on ULOSINO."
+            content="ULOSINO Guides &mdash; Learn Unix, Linux, and operating system
+          computing concepts for free"
           />
           <meta
             property="og:description"
-            content="The Friendly Flow for open source OS info"
+            content="ULOSINO Guides &mdash; Learn Unix, Linux, and other computing concepts"
           />
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="en_GB" />
@@ -29,7 +30,7 @@ export default class Document extends NextDocument {
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content="ULOSINO" />
+          <meta name="apple-mobile-web-app-title" content="ULOSINO Guides" />
           <meta name="mobile-web-app-capable" content="yes" />
           <link rel="icon" href="/brand/favicon.ico" />
           <link rel="apple-touch-icon" href="/brand/apple-icon-180.png" />

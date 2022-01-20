@@ -39,8 +39,11 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
   return (
     <>
       <Head>
-        <title>ULOSINO &mdash; {metadata.title}</title>
-        <meta property="og:title" content="{metadata.title} on ULOSINO" />
+        <title>ULOSINO Guides &mdash; {metadata.title}</title>
+        <meta
+          property="og:title"
+          content="{metadata.title} on ULOSINO Guides"
+        />
       </Head>
 
       <Flex

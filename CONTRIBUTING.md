@@ -1,14 +1,12 @@
-# Contribute to the ULOSINO project
+# Contribute to the ULOSINO Guides project
 
 Firstly, a big thanks to you for setting aside your time to contribute! Your contributions will be warmly welcomed.
-
-With ULOSINO, getting an open source OS onto the global stage is very easy. To contribute, you will need a GitHub account. Read on for comprehensive details on how to contribute to both Database Content and the Source Code.
 
 Remember that all contributions are bound by the Contribution Code of Conduct, available at CODE_OF_CONDUCT.md.
 
 ## Editing a single file
 
-Often you'll want to update a single operating system page. Luckily this is easy - you don't even have to leave GitHub!
+Often you'll want to update a single Guide page. Luckily this is easy - you don't even have to leave GitHub!
 
 First, go into the OS file store, available in `/public/content/browse/`. Then find the file you want and open it.
 
@@ -17,27 +15,11 @@ When you open a file, it'll show something like this:
 ```
 ---
 # Required metadata
-title: "Pin Oak (Demo)"
-summary: "Distribution page demo"
-date: "2021-10-21"
-version: ""
-
-# Other metadata
-platform: ""
-descends: ""
-desktop: ""
-shell: ""
-packagemgr: ""
-startup: ""
-size: ""
-browser: ""
-licence: "MIT"
-origin: ""
-website: "ulosino.com"
-repository: "github.com/ulosino/ulosino"
+title: "File Managers"
+description: "Learn about file managers"
 ---
 
-Pin Oak is a ...
+The file manager is a piece of software...
 ```
 
 We want to edit this file.
@@ -46,17 +28,9 @@ We want to edit this file.
 - Make your edits, and;
 - Then go to the bottom of the page and select the green 'Commit Changes' button. That's it.
 
-> **Note:** Empty metadata categories in the 'other' section will be hidden. View the demo page (code above) to see this in action.
-
-> **Note for Tempo:** Quick Donation Options that are not applicable need to be left blank and commented out.
-
 ## Larger contributions
 
-If you want to contribute to the Source Code of ULOSINO, or make mutiple changes to Database Content, you'll need to make a repository fork so that you can work with the stack on your computer.
-
-> **Tip:** If you're creating a new OS page, it is recommended to duplicate `demo.mdx`. This ensures you have the latest metadata available. Reference `STACK.md` for up-to-date definitions.
-
-> **Note:** Most discontinued operating systems can be carried on ULOSINO, as long as an official reference is still available. A website or archived GitHub/GitLab repository with a README would fulfill this. Please make it clear (first line) that the OS is discontinued.
+If you want to contribute to the Source Code of ULOSINO Guides, or make mutiple changes to Database Content, you'll need to make a repository fork so that you can work with the stack on your computer.
 
 Below is a recommended way to do this. There are other ways to do the same thing.
 
@@ -118,4 +92,4 @@ For all issues, remember to use labels and try to be as descriptive as possible 
 
 ---
 
-Last revised 19th January, 2022.
+Last revised 20th January, 2022.

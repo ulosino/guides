@@ -20,7 +20,7 @@ export default function Custom404() {
   return (
     <>
       <Head>
-        <title>ULOSINO &mdash; 404</title>
+        <title>ULOSINO Guides &mdash; 404</title>
       </Head>
 
       <Flex
