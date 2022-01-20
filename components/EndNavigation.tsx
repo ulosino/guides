@@ -12,7 +12,7 @@ export default function EndNavigation() {
           <Link href="/licence">Copyright Notice</Link>
         </Text>
         <Text fontSize="xs">
-          <Link href="/privacy">Privacy</Link>
+          <Link href="https://www.ulosino.com/privacy">Privacy</Link>
         </Text>
       </Stack>
     </Flex>

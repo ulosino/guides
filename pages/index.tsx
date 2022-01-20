@@ -37,6 +37,9 @@ import Loading from "components/Loading";
 const FeaturedGuides = dynamic(() => import("components/FeaturedGuides"), {
   loading: () => <Loading />,
 });
+const BetaWarning = dynamic(() => import("components/BetaWarning"), {
+  loading: () => <Loading />,
+});
 const About = dynamic(() => import("components/About"), {
   loading: () => <Loading />,
 });
@@ -106,6 +109,7 @@ export default function Home({
         <Container maxW="container.lg" flex={1}>
           <Stack direction="column" spacing={10}>
             <FeaturedGuides />
+            <BetaWarning />
             <Stack direction="column" spacing={2}>
               <Text textStyle="secondary" as="h6">
                 All Guides
