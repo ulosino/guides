@@ -9,7 +9,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-import { Stack, Heading, Button } from "@chakra-ui/react";
+import { Stack, Box, Heading, Button } from "@chakra-ui/react";
 import { HiOutlineCode } from "react-icons/hi";
 
 import UIProvider from "providers/UIProvider";
@@ -19,14 +19,16 @@ const DiscussionModal = dynamic(() => import("components/DiscussionModal"));
 // Pages can use the following components if needed
 const Link = dynamic(() => import("next/link"));
 const Image = dynamic(() => import("next/image"));
+const FSTable = dynamic(() => import("components/FSTable"));
 
-const availableComponents = [Link, Image];
+const availableComponents = [Link, Image, FSTable];
 
 export default function MDXHostPage({ source, metadata, componentNames }) {
   const components = {
     ...availableComponents,
     Link: componentNames.includes("Link") ? Link : null,
     Image: componentNames.includes("Image") ? Image : null,
+    FSTable: componentNames.includes("FSTable") ? FSTable : null,
   };
   return (
     <UIProvider>
@@ -44,21 +46,19 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
           content="'{metadata.summary}' &mdash; {metadata.title} on ULOSINO"
         />
       </Head>
-      <Stack direction="row" spacing={2} as="section">
-        <DiscussionModal />
-        {metadata.repository && (
-          <Link href={metadata.repository} passHref>
-            <Button leftIcon={<HiOutlineCode />}>Edit this Guide</Button>
-          </Link>
-        )}
-      </Stack>
-      <Stack spacing={2} mb={4}>
-        <Heading size="3xl" as="h1">
-          {metadata.title}
-        </Heading>
-      </Stack>
-      <Stack direction={["column", "column", "row"]} spacing={10} as="main">
-        <MDXRemote {...source} components={components} />
+
+      <Stack direction="column" spacing={8}>
+        <Stack direction="row" spacing={2} as="section">
+          <DiscussionModal />
+          {metadata.repository && (
+            <Link href={metadata.repository} passHref>
+              <Button leftIcon={<HiOutlineCode />}>Edit this Guide</Button>
+            </Link>
+          )}
+        </Stack>
+        <Box>
+          <MDXRemote {...source} components={components} />
+        </Box>
       </Stack>
     </UIProvider>
   );
@@ -79,6 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   const componentNames = [
     /<Link/.test(content) ? "Link" : null,
     /<Image/.test(content) ? "Image" : null,
+    /<FSTable/.test(content) ? "FSTable" : null,
   ].filter(Boolean);
 
   const mdxSource = await serialize(content, {
