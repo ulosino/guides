@@ -80,7 +80,10 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>ULOSINO &mdash; Browse</title>
+        <title>
+          ULOSINO Guides &mdash; Learn Unix, Linux, and operating system
+          computing concepts for free
+        </title>
       </Head>
 
       <Flex
