@@ -125,11 +125,10 @@ export default function Home({
                           key={`/guides/${id}`}
                         >
                           <Card key={id} variant="button" px={6}>
-                            <Flex direction="row" spacing={8}>
+                            <Stack direction="column" spacing={0}>
                               <Heading size="md">{title}</Heading>
-                              <Spacer />
-                              {description && <Text>{description}</Text>}
-                            </Flex>
+                              {description && <Text>"{description}"</Text>}
+                            </Stack>
                           </Card>
                         </Link>
                       ))}
@@ -144,11 +143,10 @@ export default function Home({
                           key={`/guides/${id}`}
                         >
                           <Card key={id} variant="button" px={6}>
-                            <Flex direction="row" spacing={8}>
+                            <Stack direction="column" spacing={0}>
                               <Heading size="md">{title}</Heading>
-                              <Spacer />
-                              {description && <Text>{description}</Text>}
-                            </Flex>
+                              {description && <Text>"{description}"</Text>}
+                            </Stack>
                           </Card>
                         </Link>
                       ))}
