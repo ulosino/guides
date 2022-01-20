@@ -24,10 +24,10 @@ export default function About() {
         <Text textStyle="secondary" as="h6">
           Links
         </Text>
-        <Link href="https://www.ulosino.com">
+        <Link href="https://www.ulosino.com" passHref>
           <Button leftIcon={<HiOutlineGlobe />}>Go to ULOSINO</Button>
         </Link>
-        <Link href="https://github.com/ulosino/guides">
+        <Link href="https://github.com/ulosino/guides" passHref>
           <Button leftIcon={<HiOutlineCode />}>Make a Contribution</Button>
         </Link>
       </Stack>

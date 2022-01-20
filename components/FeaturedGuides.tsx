@@ -33,7 +33,7 @@ export default function FeaturedGuides() {
             <Text textStyle="secondary" as="h6">
               Start
             </Text>
-            <Link href="/guides/first">
+            <Link href="/guides/first" passHref>
               <Card variant="button">
                 <Stack direction="column" spacing={2}>
                   <Heading size="md">Choosing your 1st</Heading>
@@ -44,7 +44,7 @@ export default function FeaturedGuides() {
                 </Stack>
               </Card>
             </Link>
-            <Link href="/guides/definitions">
+            <Link href="/guides/definitions" passHref>
               <Card variant="button">
                 <Stack direction="column" spacing={2}>
                   <Heading size="md">Definitions</Heading>
@@ -57,7 +57,7 @@ export default function FeaturedGuides() {
             <Text textStyle="secondary" as="h6">
               Keep Learning
             </Text>
-            <Link href="/guides/virtual">
+            <Link href="/guides/virtual" passHref>
               <Card variant="button">
                 <Stack direction="column" spacing={2}>
                   <Heading size="md">Virtual Machines</Heading>
@@ -73,7 +73,7 @@ export default function FeaturedGuides() {
             <Text textStyle="secondary" as="h6">
               Become an Expert
             </Text>
-            <Link href="/guides/shell">
+            <Link href="/guides/shell" passHref>
               <Card variant="button">
                 <Stack direction="column" spacing={2}>
                   <Heading size="md">Shell &amp; Going Lighter</Heading>
