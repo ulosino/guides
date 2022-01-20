@@ -35,6 +35,8 @@ import {
 
 import ULOSINOLink from "components/ULOSINOLink";
 
+import FeaturedGuides from "components/FeaturedGuides";
+import About from "components/About";
 import EndNavigation from "components/EndNavigation";
 
 import { useStyleConfig } from "@chakra-ui/react";
@@ -91,95 +93,98 @@ export default function Home({
           </nav>
         </Container>
         <Container maxW="container.lg" flex={1}>
-          <Stack direction="column" spacing={4}>
-            <Text textStyle="secondary" as="h6">
-              All Guides
-            </Text>
-            <FormControl>
-              <AutoComplete>
-                <AutoCompleteInput
-                  variant="outline"
-                  size="md"
-                  borderRadius="xl"
-                  shadow="inner"
-                  placeholder="Find an operating system..."
-                  id="testing-db-input"
-                />
-                <AutoCompleteList>
-                  {AZGuidesData.map(({ id, title, description }) => (
-                    <AutoCompleteItem
-                      key={`option-${title}`}
-                      value={title}
-                      maxSuggestions={5}
-                      mx={3}
-                      id="testing-db-item"
-                    >
-                      <Link
-                        href={`/guides/${id}`}
-                        passHref
-                        key={`/guides/${id}`}
-                      >
-                        <Box p={2} mb={2}>
-                          <Flex direction="row" spacing={4}>
-                            <Heading size="md">{title}</Heading>
-                            <Spacer />
-                            {description && <Text>{description}</Text>}
-                          </Flex>
-                        </Box>
-                      </Link>
-                    </AutoCompleteItem>
-                  ))}
-                </AutoCompleteList>
-              </AutoComplete>
-            </FormControl>
-            <Tabs isLazy>
-              <TabList id="testing-display-tabList">
-                <Stack direction="row" spacing={4} w="full">
-                  <Tab shadow="inner">Alphabetical</Tab>
-                  <Tab shadow="inner">Newest</Tab>
-                </Stack>
-              </TabList>
-              <TabPanels>
-                <TabPanel px={0} pb={0} pt={4}>
-                  <Stack direction="column" spacing={2}>
-                    {AZGuidesData.map(({ id, title, description }) => (
-                      <Link
-                        href={`/guides/${id}`}
-                        passHref
-                        key={`/guides/${id}`}
-                      >
-                        <Card key={id} variant="button" px={6}>
-                          <Flex direction="row" spacing={4}>
-                            <Heading size="md">{title}</Heading>
-                            <Spacer />
-                            {description && <Text>{description}</Text>}
-                          </Flex>
-                        </Card>
-                      </Link>
-                    ))}
+          <Stack direction="column" spacing={10}>
+            <FeaturedGuides />
+            <Stack direction="column" spacing={2}>
+              <Text textStyle="secondary" as="h6">
+                All Guides
+              </Text>
+              <Tabs isLazy>
+                <TabList id="testing-display-tabList">
+                  <Stack direction="row" spacing={4} w="full">
+                    <Tab shadow="inner">Alphabetical</Tab>
+                    <Tab shadow="inner">Newest</Tab>
+                    <Tab shadow="inner">Search</Tab>
                   </Stack>
-                </TabPanel>
-                <TabPanel px={0} pb={0} pt={4}>
-                  <Stack direction="column" spacing={2}>
-                    {newestGuidesData.map(({ id, title, description }) => (
-                      <Link
-                        href={`/guides/${id}`}
-                        passHref
-                        key={`/guides/${id}`}
-                      >
-                        <Card key={id} variant="button" px={6}>
-                          <Flex direction="row" spacing={4}>
-                            <Heading size="md">{title}</Heading>
-                            <Spacer />
-                            {description && <Text>{description}</Text>}
-                          </Flex>
-                        </Card>
-                      </Link>
-                    ))}
-                  </Stack>
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
+                </TabList>
+                <TabPanels>
+                  <TabPanel px={0} pb={0} pt={4}>
+                    <Stack direction="column" spacing={2}>
+                      {AZGuidesData.map(({ id, title, description }) => (
+                        <Link
+                          href={`/guides/${id}`}
+                          passHref
+                          key={`/guides/${id}`}
+                        >
+                          <Card key={id} variant="button" px={6}>
+                            <Flex direction="row" spacing={8}>
+                              <Heading size="md">{title}</Heading>
+                              <Spacer />
+                              {description && <Text>{description}</Text>}
+                            </Flex>
+                          </Card>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </TabPanel>
+                  <TabPanel px={0} pb={0} pt={4}>
+                    <Stack direction="column" spacing={2}>
+                      {newestGuidesData.map(({ id, title, description }) => (
+                        <Link
+                          href={`/guides/${id}`}
+                          passHref
+                          key={`/guides/${id}`}
+                        >
+                          <Card key={id} variant="button" px={6}>
+                            <Flex direction="row" spacing={8}>
+                              <Heading size="md">{title}</Heading>
+                              <Spacer />
+                              {description && <Text>{description}</Text>}
+                            </Flex>
+                          </Card>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </TabPanel>
+                  <TabPanel px={0} pb={0} pt={4}>
+                    <FormControl>
+                      <AutoComplete>
+                        <AutoCompleteInput
+                          variant="outline"
+                          size="md"
+                          borderRadius="xl"
+                          shadow="inner"
+                          placeholder="Find a Guide..."
+                          id="testing-db-input"
+                        />
+                        <AutoCompleteList>
+                          {AZGuidesData.map(({ id, title }) => (
+                            <AutoCompleteItem
+                              key={`option-${title}`}
+                              value={title}
+                              maxSuggestions={5}
+                              mx={3}
+                              id="testing-db-item"
+                            >
+                              <Link
+                                href={`/guides/${id}`}
+                                passHref
+                                key={`/guides/${id}`}
+                              >
+                                <Heading size="md" p={2}>
+                                  {title}
+                                </Heading>
+                              </Link>
+                            </AutoCompleteItem>
+                          ))}
+                        </AutoCompleteList>
+                      </AutoComplete>
+                    </FormControl>
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </Stack>
+            <About />
           </Stack>
         </Container>
         <Container maxW="container.lg">
