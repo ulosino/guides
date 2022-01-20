@@ -8,34 +8,68 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-import UIProvider from "providers/UIProvider";
+import {
+  Container,
+  Flex,
+  Spacer,
+  Center,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { HiChevronLeft } from "react-icons/hi";
+
+import Loading from "components/Loading";
+const ULOSINOLink = dynamic(() => import("components/ULOSINOLink"), {
+  loading: () => <Loading />,
+});
+const EndNavigation = dynamic(() => import("components/EndNavigation"), {
+  loading: () => <Loading />,
+});
 
 // Pages can use the following components if needed
 const Link = dynamic(() => import("next/link"));
-const CopyrightHeader = dynamic(() => import("components/CopyrightHeader"));
-const PrivacyHeader = dynamic(() => import("components/PrivacyHeader"));
 
-const availableComponents = [Link, CopyrightHeader, PrivacyHeader];
+const availableComponents = [Link];
 
 export default function MDXHostPage({ source, metadata, componentNames }) {
   const components = {
     ...availableComponents,
     Link: componentNames.includes("Link") ? Link : null,
-    CopyrightHeader: componentNames.includes("CopyrightHeader")
-      ? CopyrightHeader
-      : null,
-    PrivacyHeader: componentNames.includes("PrivacyHeader")
-      ? PrivacyHeader
-      : null,
   };
   return (
-    <UIProvider>
+    <>
       <Head>
         <title>ULOSINO &mdash; {metadata.title}</title>
         <meta property="og:title" content="{metadata.title} on ULOSINO" />
       </Head>
-      <MDXRemote {...source} components={components} />
-    </UIProvider>
+
+      <Flex
+        display="flex"
+        minH="100vh"
+        direction="column"
+        bg={useColorModeValue("gray.50", "inherit")}
+      >
+        <Container maxWidth="container.lg" mb={12}>
+          <nav>
+            <Flex>
+              <Link href="/" passHref>
+                <Button leftIcon={<HiChevronLeft />} mt={8}>
+                  Back to Guides
+                </Button>
+              </Link>
+              <Spacer />
+              <ULOSINOLink />
+            </Flex>
+          </nav>
+        </Container>
+        <Container maxW="container.lg" flex={1}>
+          <MDXRemote {...source} components={components} />
+        </Container>
+        <Container maxW="container.lg">
+          <EndNavigation />
+        </Container>
+      </Flex>
+    </>
   );
 }
 
@@ -51,11 +85,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
 
   const { content, data } = matter(source);
 
-  const componentNames = [
-    /<Link/.test(content) ? "Link" : null,
-    /<CopyrightHeader/.test(content) ? "CopyrightHeader" : null,
-    /<PrivacyHeader/.test(content) ? "PrivacyHeader" : null,
-  ].filter(Boolean);
+  const componentNames = [/<Link/.test(content) ? "Link" : null].filter(
+    Boolean
+  );
 
   const mdxSource = await serialize(content, {
     scope: data,
