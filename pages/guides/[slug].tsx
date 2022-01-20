@@ -14,15 +14,18 @@ import {
   Stack,
   Flex,
   Spacer,
-  Center,
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HiOutlineCode, HiChevronLeft } from "react-icons/hi";
 
-import ULOSINOLink from "components/ULOSINOLink";
-
-import EndNavigation from "components/EndNavigation";
+import Loading from "components/Loading";
+const ULOSINOLink = dynamic(() => import("components/ULOSINOLink"), {
+  loading: () => <Loading />,
+});
+const EndNavigation = dynamic(() => import("components/EndNavigation"), {
+  loading: () => <Loading />,
+});
 
 const DiscussionModal = dynamic(() => import("components/DiscussionModal"));
 

@@ -18,9 +18,13 @@ import {
 } from "@chakra-ui/react";
 import { HiChevronLeft } from "react-icons/hi";
 
-import ULOSINOLink from "components/ULOSINOLink";
-
-import EndNavigation from "components/EndNavigation";
+import Loading from "components/Loading";
+const ULOSINOLink = dynamic(() => import("components/ULOSINOLink"), {
+  loading: () => <Loading />,
+});
+const EndNavigation = dynamic(() => import("components/EndNavigation"), {
+  loading: () => <Loading />,
+});
 
 // Pages can use the following components if needed
 const Link = dynamic(() => import("next/link"));

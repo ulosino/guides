@@ -33,11 +33,19 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import ULOSINOLink from "components/ULOSINOLink";
-
-import FeaturedGuides from "components/FeaturedGuides";
-import About from "components/About";
-import EndNavigation from "components/EndNavigation";
+import Loading from "components/Loading";
+const FeaturedGuides = dynamic(() => import("components/FeaturedGuides"), {
+  loading: () => <Loading />,
+});
+const About = dynamic(() => import("components/About"), {
+  loading: () => <Loading />,
+});
+const EndNavigation = dynamic(() => import("components/EndNavigation"), {
+  loading: () => <Loading />,
+});
+const ULOSINOLink = dynamic(() => import("components/ULOSINOLink"), {
+  loading: () => <Loading />,
+});
 
 import { useStyleConfig } from "@chakra-ui/react";
 function Card(props) {
