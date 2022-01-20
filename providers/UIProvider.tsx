@@ -2,11 +2,6 @@
 
 import { Container, Flex, useColorModeValue } from "@chakra-ui/react";
 
-import {
-  StartNavigationDesktop,
-  StartNavigationMobile,
-} from "components/StartNavigation";
-
 import dynamic from "next/dynamic";
 import Loading from "components/Loading";
 const EndNavigation = dynamic(() => import("components/EndNavigation"), {

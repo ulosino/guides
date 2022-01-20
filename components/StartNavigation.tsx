@@ -11,24 +11,15 @@ import {
   IconButton,
   Button,
   Box,
-  Heading,
 } from "@chakra-ui/react";
 import { FiChevronLeft } from "react-icons/fi";
+import { LargeLogo, SmallLogo } from "src/components/Logo";
 
-import { IconLogo, SmallLogo } from "components/Logo";
-
-import { useStyleConfig } from "@chakra-ui/react";
-function Card(props) {
-  const { variant, children, ...rest } = props;
-
-  const styles = useStyleConfig("Card", { variant });
-
-  return (
-    <Box __css={styles} {...rest}>
-      {children}
-    </Box>
-  );
-}
+import dynamic from "next/dynamic";
+import Loading from "src/components/Loading";
+const NavigationMenu = dynamic(() => import("src/components/NavigationMenu"), {
+  loading: () => <Loading />,
+});
 
 // For desktop, includes links to Home and Browse pages, and access to <NavigationMenu>
 export function StartNavigationDesktop() {
@@ -36,16 +27,15 @@ export function StartNavigationDesktop() {
     <nav>
       <Flex>
         <Link href="/" passHref>
-          <Card variant="button" p={2} mt={4}>
-            <Stack direction="row" spacing={4}>
-              <Box rounded="lg" bg="secondary" p={2}>
-                <IconLogo />
-              </Box>
-              <Heading size="md" pt={2} pe={4}>
-                ULOSINO Guides
-              </Heading>
-            </Stack>
-          </Card>
+          <Center
+            cursor="pointer"
+            id="testing-display-logoLg"
+            bg="secondary"
+            roundedBottom="2xl"
+            p={4}
+          >
+            <LargeLogo />
+          </Center>
         </Link>
         <Spacer />
         <Stack direction="row" pt={8}>
@@ -56,6 +46,10 @@ export function StartNavigationDesktop() {
             <Button variant="ghost">Browse</Button>
           </Link>
         </Stack>
+        <Spacer />
+        <Box pt={8}>
+          <NavigationMenu />
+        </Box>
       </Flex>
     </nav>
   );
@@ -87,6 +81,10 @@ export function StartNavigationMobile() {
           <SmallLogo />
         </Center>
       </Link>
+      <Spacer />
+      <Box pt={4}>
+        <NavigationMenu />
+      </Box>
     </Flex>
   );
 }

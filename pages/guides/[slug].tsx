@@ -9,10 +9,20 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-import { Stack, Box, Heading, Button } from "@chakra-ui/react";
-import { HiOutlineCode } from "react-icons/hi";
+import {
+  Container,
+  Stack,
+  Flex,
+  Spacer,
+  Center,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { HiOutlineCode, HiChevronLeft } from "react-icons/hi";
 
-import UIProvider from "providers/UIProvider";
+import { IconLogo } from "components/Logo";
+
+import EndNavigation from "components/EndNavigation";
 
 const DiscussionModal = dynamic(() => import("components/DiscussionModal"));
 
@@ -31,7 +41,7 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
     FSTable: componentNames.includes("FSTable") ? FSTable : null,
   };
   return (
-    <UIProvider>
+    <>
       <Head>
         <title>
           ULOSINO &mdash; {metadata.title}: '{metadata.summary}'
@@ -47,20 +57,49 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
         />
       </Head>
 
-      <Stack direction="column" spacing={8}>
-        <Stack direction="row" spacing={2} as="section">
-          <DiscussionModal />
-          {metadata.repository && (
-            <Link href={metadata.repository} passHref>
-              <Button leftIcon={<HiOutlineCode />}>Edit this Guide</Button>
-            </Link>
-          )}
-        </Stack>
-        <Box>
+      <Flex
+        display="flex"
+        minH="100vh"
+        direction="column"
+        bg={useColorModeValue("gray.50", "inherit")}
+      >
+        <Container maxWidth="container.lg" mb={12}>
+          <nav>
+            <Flex>
+              <Stack direction="row" spacing={4} mt={6}>
+                <Link href="/" passHref>
+                  <Button leftIcon={<HiChevronLeft />}>Back to Guides</Button>
+                </Link>
+                <DiscussionModal />
+                {metadata.repository && (
+                  <Link href={metadata.repository} passHref>
+                    <Button leftIcon={<HiOutlineCode />}>Edit</Button>
+                  </Link>
+                )}
+              </Stack>
+              <Spacer />
+              <Link href="/" passHref>
+                <Center
+                  cursor="pointer"
+                  id="testing-display-logoLg"
+                  bg="secondary"
+                  roundedBottom="2xl"
+                  p={4}
+                >
+                  <IconLogo />
+                </Center>
+              </Link>
+            </Flex>
+          </nav>
+        </Container>
+        <Container maxW="container.lg" flex={1}>
           <MDXRemote {...source} components={components} />
-        </Box>
-      </Stack>
-    </UIProvider>
+        </Container>
+        <Container maxW="container.lg">
+          <EndNavigation />
+        </Container>
+      </Flex>
+    </>
   );
 }
 

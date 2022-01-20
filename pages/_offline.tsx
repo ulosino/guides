@@ -1,70 +1,53 @@
 import { GetStaticProps } from "next";
 
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import {
   Heading,
   Text,
-  Button,
-  Box,
-  Stack,
   Container,
-  Icon,
+  Flex,
+  Stack,
+  Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { HiChevronLeft, HiOutlineRefresh, HiCursorClick } from "react-icons/hi";
-import { AlertIcon } from "components/Icons";
+import { HiOutlineRefresh, HiArrowNarrowLeft } from "react-icons/hi";
 
-import { useStyleConfig } from "@chakra-ui/react";
-function Card(props) {
-  const { variant, children, ...rest } = props;
+import EndNavigation from "components/EndNavigation";
 
-  const styles = useStyleConfig("Card", { variant });
-
-  return (
-    <Box __css={styles} {...rest}>
-      {children}
-    </Box>
-  );
-}
-
-import UIProvider from "providers/UIProvider";
-
-export default function CacheFallback() {
+export default function Offline() {
   const router = useRouter();
   return (
-    <UIProvider>
+    <>
       <Head>
-        <title>ULOSINO &mdash; Disconnected</title>
+        <title>ULOSINO &mdash; Offline</title>
       </Head>
 
-      <Container maxW="container.sm" mt={16}>
-        <Stack direction="column" spacing={8}>
-          <Text textStyle="secondary" as="h6">
-            Disconnected From Server
-          </Text>
-          <Stack direction="row" spacing={8}>
-            <Box display="block">
-              <AlertIcon />
-            </Box>
+      <Flex
+        display="flex"
+        minH="100vh"
+        direction="column"
+        bg={useColorModeValue("gray.50", "inherit")}
+      >
+        <Container maxWidth="container.lg" mb={12}>
+          <nav>
+            <Button leftIcon={<HiArrowNarrowLeft />} mt={8}>
+              Back to Guides
+            </Button>
+          </nav>
+        </Container>
+        <Container maxW="container.sm" flex={1}>
+          <Stack direction="column" spacing={8}>
             <Stack direction="column" spacing={2}>
               <Heading size="md">You're offline.</Heading>
               <Text>
                 There were issues downloading data from the server. Check your
                 data or networking settings and get back online.
               </Text>
-              <Text fontSize="xs">
-                If you are connected, please hold on as the server may be down.
-              </Text>
             </Stack>
-          </Stack>
-          <Stack direction="row" spacing={8}>
-            <Box display="block">
-              <Card p={2} pb={1} rounded="2xl">
-                <Icon as={HiCursorClick} w={12} h={12} />
-              </Card>
-            </Box>
-            <Stack direction="column" spacing={2} w="full">
+            <Stack direction="column" spacing={2}>
               <Button
                 leftIcon={<HiOutlineRefresh />}
                 size="lg"
@@ -72,18 +55,19 @@ export default function CacheFallback() {
               >
                 Try Again
               </Button>
-              <Button
-                leftIcon={<HiChevronLeft />}
-                size="sm"
-                onClick={() => router.back()}
-              >
-                Go Back
-              </Button>
+              <Link href="/" passHref>
+                <Button leftIcon={<HiArrowNarrowLeft />} size="lg">
+                  Back to Guides
+                </Button>
+              </Link>
             </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </UIProvider>
+        </Container>
+        <Container maxW="container.lg">
+          <EndNavigation />
+        </Container>
+      </Flex>
+    </>
   );
 }
 
