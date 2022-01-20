@@ -130,7 +130,7 @@ export default function Home({
                           <Card key={id} variant="button" px={6}>
                             <Stack direction="column" spacing={0}>
                               <Heading size="md">{title}</Heading>
-                              {description && <Text>"{description}"</Text>}
+                              {description && <Text>"{description}."</Text>}
                             </Stack>
                           </Card>
                         </Link>
@@ -148,7 +148,7 @@ export default function Home({
                           <Card key={id} variant="button" px={6}>
                             <Stack direction="column" spacing={0}>
                               <Heading size="md">{title}</Heading>
-                              {description && <Text>"{description}"</Text>}
+                              {description && <Text>"{description}."</Text>}
                             </Stack>
                           </Card>
                         </Link>

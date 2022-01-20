@@ -47,7 +47,7 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
     <>
       <Head>
         <title>
-          ULOSINO Guides &mdash; {metadata.title}: '{metadata.summary}'
+          ULOSINO Guides &mdash; {metadata.title}: '{metadata.description}'
         </title>
         <meta
           property="og:title"

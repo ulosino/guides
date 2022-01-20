@@ -22,7 +22,7 @@ export default function About() {
       </Stack>
       <Stack direction="column" spacing={2}>
         <Text textStyle="secondary" as="h6">
-          Links
+          Quick Links
         </Text>
         <Link href="https://www.ulosino.com" passHref>
           <Button leftIcon={<HiOutlineGlobe />}>Go to ULOSINO</Button>

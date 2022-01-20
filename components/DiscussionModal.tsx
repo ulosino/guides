@@ -51,7 +51,7 @@ export default function DiscussionModal() {
           <ModalBody>
             <Utterances
               repo={"ulosino/guides"}
-              label={"Page Comments"}
+              label={"Guide Comments"}
               type={"pathname"}
               theme={"preferred-color-scheme"}
             />
