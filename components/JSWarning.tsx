@@ -10,7 +10,7 @@ export default function JSWarning() {
         <Stack direction="row" spacing={10}>
           <Icon as={HiExclamationCircle} w={8} h={8} me={2} />
           <Text pt={1}>
-            Upgrade your browser or enable JavaScript to use ULOSINO.
+            Upgrade your browser or enable JavaScript to use ULOSINO Guides.
           </Text>
         </Stack>
       </Container>

@@ -16,9 +16,9 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { HiArrowNarrowLeft } from "react-icons/hi";
+import { HiChevronLeft } from "react-icons/hi";
 
-import { IconLogo } from "components/Logo";
+import ULOSINOLink from "components/ULOSINOLink";
 
 import EndNavigation from "components/EndNavigation";
 
@@ -49,22 +49,12 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
           <nav>
             <Flex>
               <Link href="/" passHref>
-                <Button leftIcon={<HiArrowNarrowLeft />} mt={8}>
-                  Go Home
+                <Button leftIcon={<HiChevronLeft />} mt={8}>
+                  Back to Guides
                 </Button>
               </Link>
               <Spacer />
-              <Link href="/" passHref>
-                <Center
-                  cursor="pointer"
-                  id="testing-display-logoLg"
-                  bg="secondary"
-                  roundedBottom="2xl"
-                  p={4}
-                >
-                  <IconLogo />
-                </Center>
-              </Link>
+              <ULOSINOLink />
             </Flex>
           </nav>
         </Container>

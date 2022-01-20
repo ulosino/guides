@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { HiOutlineCode, HiChevronLeft } from "react-icons/hi";
 
-import { IconLogo } from "components/Logo";
+import ULOSINOLink from "components/ULOSINOLink";
 
 import EndNavigation from "components/EndNavigation";
 
@@ -78,17 +78,7 @@ export default function MDXHostPage({ source, metadata, componentNames }) {
                 )}
               </Stack>
               <Spacer />
-              <Link href="/" passHref>
-                <Center
-                  cursor="pointer"
-                  id="testing-display-logoLg"
-                  bg="secondary"
-                  roundedBottom="2xl"
-                  p={4}
-                >
-                  <IconLogo />
-                </Center>
-              </Link>
+              <ULOSINOLink />
             </Flex>
           </nav>
         </Container>
