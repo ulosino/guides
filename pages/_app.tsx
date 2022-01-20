@@ -18,7 +18,7 @@ import "@fontsource/public-sans/600.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PlausibleProvider domain="ulosino.com">
+    <PlausibleProvider domain="guides.ulosino.com">
       <ChakraProvider theme={UITheme}>
         <MDXProvider>
           <noscript>
