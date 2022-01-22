@@ -1,7 +1,7 @@
 // Configuration for the next-sitemap package and robots.txt
 
 module.exports = {
-  siteUrl: "https://www.ulosino.com",
+  siteUrl: "https://guides.ulosino.com",
   changefreq: "weekly",
   generateRobotsTxt: true,
   robotsTxtOptions: {
