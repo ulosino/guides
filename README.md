@@ -1,6 +1,6 @@
 # ULOSINO Guides
 
-[![Cypress Testing](https://github.com/ulosino/guides/matches/workflows/testing.yml/badge.svg)](https://github.com/ulosino/ulosino/actions/workflows/testing.yml)
+[![Cypress Testing](https://github.com/ulosino/guides/actions/workflows/testing.yml/badge.svg)](https://github.com/ulosino/ulosino/actions/workflows/testing.yml)
 [![Lighthouse Performance CI](https://github.com/ulosino/guides/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/ulosino/ulosino/actions/workflows/lighthouse.yml)
 
 ULOSINO Guides is the learning companion to [ULOSINO](https://github.com/ulosino/ulosino). Learn Unix, Linux, and other operating system computing concepts for free, and without distractions.
