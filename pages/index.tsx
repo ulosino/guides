@@ -87,6 +87,18 @@ export default function Home({
           ULOSINO Guides &mdash; Learn Unix, Linux, and operating system
           computing concepts for free
         </title>
+        <meta
+          property="og:title"
+          content="ULOSINO Guides &mdash; Learn and lift off"
+        />
+        <meta
+          name="description"
+          content="Learn operating system and computing concepts for free and without distractions with ULOSINO Guides. Learn Unix, Linux, BSD, and other open source operating system concepts and lift off."
+        />
+        <meta
+          property="og:description"
+          content="Learn operating system and computing concepts for free with ULOSINO Guides."
+        />
       </Head>
 
       <Flex
