@@ -4,6 +4,7 @@ module.exports = {
   siteUrl: "https://guides.ulosino.com",
   changefreq: "weekly",
   generateRobotsTxt: true,
+  exclude: ["/500"],
   robotsTxtOptions: {
     policies: [
       {

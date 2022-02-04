@@ -10,15 +10,6 @@ export default class Document extends NextDocument {
           <meta charSet="utf-8" />
 
           {/* General metadata */}
-          <meta
-            name="description"
-            content="ULOSINO Guides &mdash; Learn Unix, Linux, and operating system
-          computing concepts for free"
-          />
-          <meta
-            property="og:description"
-            content="ULOSINO Guides &mdash; Learn Unix, Linux, and other computing concepts"
-          />
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="en_GB" />
 

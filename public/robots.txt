@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.ulosino.com
+Host: https://guides.ulosino.com
 
 # Sitemaps
-Sitemap: https://www.ulosino.com/sitemap.xml
+Sitemap: https://guides.ulosino.com/sitemap.xml
